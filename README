@@ -1,4 +1,4 @@
-Painful PayPal recurring payments (with flexible amount) integration.
+PayPal recurring payments (with flexible amount) integration.
 
 1. Create object instance:
 $recurring = new PaypalRecurringPayments($gateway);
