@@ -1,0 +1,24 @@
+Painful PayPal recurring payments (with flexible amount) integration.
+
+1. Create object instance:
+$recurring = new PaypalRecurringPayments($gateway);
+
+2. Obtain billing agreement from PayPal, user will be redirected there
+$recurring->obtainBillingAgreement("Test subscription", "testuser@gmail.com", 'USD', $resultData);
+
+3. Read PayPal's response
+$recurring->getBillingDetails();
+It will return billing details (most important are token and payerId)
+
+4. Make an initial payment (could be $1.00), it will return billing agreement ID
+$billingAgreementId = $recurring->doInitialPayment($details->token, $details->payerId, $amount);
+
+5. Now you can perform transparent transactions using the Billing Agreement ID
+$recurring->doSubscriptionPayment($billingAgreementId, $amount, $resultData);
+
+For more information see index.php file.
+
+NOTE: 
+You need to have reference transactions enabled
+To enable it on sandbox account, you need to ask it here: https://www.x.com/thread/38753
+To enable reference transactions on live site you need to contact PayPal Business Services Group
