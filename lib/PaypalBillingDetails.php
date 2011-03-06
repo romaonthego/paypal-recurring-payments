@@ -18,12 +18,12 @@
 //
 
 class PaypalBillingDetails {
-	
-	public $token;
-	public $email;
-	public $payerId;
-	public $billingAgreementAccepted;
-	
+    
+    public $token;
+    public $email;
+    public $payerId;
+    public $billingAgreementAccepted;
+    
 }
 
 ?>
